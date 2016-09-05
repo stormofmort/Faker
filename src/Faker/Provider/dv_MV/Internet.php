@@ -38,7 +38,7 @@ class Internet extends \Faker\Provider\Internet
       'https://{{domainName}}/{{slug}}.html',
   );
 
-  private static function transliterate($string)
+  protected static function transliterate($string)
   {
       $transId = 'Any-Latin; Latin-ASCII; NFD; [:Nonspacing Mark:] Remove; NFC; Lower();';
       if (function_exists('transliterator_transliterate') && $transliterator = \Transliterator::create($transId)) {
